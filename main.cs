@@ -17,7 +17,7 @@ public class Item
     public int Id;
     public int Preco;
 }
-public class LP2_Trabalho
+public class itens_magicos
 {
 
     static List<Player> Players = new List<Player>();
@@ -66,6 +66,11 @@ public class LP2_Trabalho
             kit_quadribol.Id = 06;
             kit_quadribol.Nome = "kit quadribol";
             kit_quadribol.Preco = 200;
+        
+            Item capa = new Item();
+            capa.Id = 07;
+            capa.Nome = "Capa de invisibilidade";
+            capa.Preco = 473;
 
 
         Console.Clear();
@@ -224,7 +229,8 @@ public class LP2_Trabalho
                             }
                             else
                             {
-                               Console.WriteLine("Fiado só amanhã!");
+                                Console.Clear();
+                                Console.WriteLine("Fiado só amanhã!");
                                 Console.ReadLine();
                             }
                         }
@@ -250,6 +256,7 @@ public class LP2_Trabalho
                             }
                             else
                             {
+                                Console.Clear();
                                 Console.WriteLine("Fiado só amanhã!");
                                 Console.ReadLine();
                             }
@@ -276,6 +283,7 @@ public class LP2_Trabalho
                             }
                             else
                             {
+                                Console.Clear();
                                 Console.WriteLine("Fiado só amanhã!");
                                 Console.ReadLine();;
                             }
@@ -301,6 +309,7 @@ public class LP2_Trabalho
                             }
                             else
                             {
+                                Console.Clear();
                                 Console.WriteLine("Fiado só amanhã!");
                                 Console.ReadLine();
                             }
@@ -326,6 +335,7 @@ public class LP2_Trabalho
                             }
                             else
                             {
+                                Console.Clear();
                                 Console.WriteLine("Fiado só amanhã!");
                                 Console.ReadLine();
                             }
@@ -333,7 +343,34 @@ public class LP2_Trabalho
                         else{}
                         break;
 
-                        default:                        
+                            case "07":
+                        Console.WriteLine("Você gostaria de comprar capa de invisibilidade por 473 moedas? (S)/(N)");
+                        Console.WriteLine("voce tem " + p.gold + " moedas");
+                        resp = Console.ReadLine();
+                        if(resp == "S")
+                        {
+                            if(p.gold >=capa.Preco)
+                            {
+                                p.gold = p.gold - capa.Preco;
+                                p.Itens.Add(capa);
+                                Console.Clear();
+                                Console.WriteLine("-Item adquirido!!");
+                                Console.WriteLine("Verifique seu inventário");
+                                Console.WriteLine("Muito obrigado, volte sempre!");
+                                Console.ReadLine();
+                            }
+                            else
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Fiado só amanhã!");
+                                Console.ReadLine();
+                            }
+                        }
+                        else{}
+                        break;
+                            
+                        default:
+                                                 
                         Console.WriteLine("Volte sempre,contanto que compre!");
                         Console.ReadLine();
                         break;
